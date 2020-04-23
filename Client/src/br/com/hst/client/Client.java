@@ -22,7 +22,7 @@ public class Client {
 			String name = sc.next();
 
 			Socket client = new Socket(InetAddress.getLocalHost().getHostAddress(), port);
-			RequestHandler requestHandler = new RequestHandler();
+			RequestHandler requestHandler = new RequestHandler(client);
 			DataInputStream dis = new DataInputStream(client.getInputStream());
 			DataOutputStream dos = new DataOutputStream(client.getOutputStream());
 			dos.writeUTF(name);

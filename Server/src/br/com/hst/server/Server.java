@@ -16,7 +16,7 @@ public class Server {
 	private static Map<String, ClientHandler> clientList;
 
 	public static void main(String[] args) {
-		System.out.println("Digite a porta desejada: ");
+		System.out.println("Digite a porta desejada do servidor: ");
 		try {
 
 			Scanner sc = new Scanner(System.in);
@@ -30,9 +30,8 @@ public class Server {
 				DataInputStream dis = new DataInputStream(client.getInputStream());
 				DataOutputStream dos = new DataOutputStream(client.getOutputStream());
 				String name = dis.readUTF();
-				ClientHandler clientHandler = new ClientHandler(client, name, dis, dos);
+				ClientHandler clientHandler = new ClientHandler(client, clientList, name, dis, dos);
 				clientList.put(name, clientHandler);
-				// sendToAll(name + " entrou");
 				Thread t = new Thread(clientHandler);
 				t.start();
 			}
