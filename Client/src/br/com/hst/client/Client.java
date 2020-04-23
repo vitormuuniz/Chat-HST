@@ -9,7 +9,9 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 /**
- * Client
+ * @author internship_team
+ * Client Side 
+ * It's here what you inform your name and server port.
  */
 public class Client {
 

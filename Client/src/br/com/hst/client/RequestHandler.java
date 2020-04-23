@@ -62,10 +62,10 @@ public class RequestHandler {
 			synchronized public void run() {
 				while (true) {
 					Scanner sc = new Scanner(System.in);
-					int opcao = sc.nextInt();
+					int option = sc.nextInt();
 					try {
-						dos.writeInt(opcao);
-						switch (opcao) {
+						dos.writeInt(option);
+						switch (option) {
 						case 2:
 							break;
 						case 3:
@@ -77,7 +77,7 @@ public class RequestHandler {
 							System.exit(0);
 							break;
 						default:
-							System.out.println("Operação "+opcao+" não existente!");
+							System.out.println("Operação "+option+" não existente!");
 						}
 					} catch (IOException e) {
 						e.printStackTrace();

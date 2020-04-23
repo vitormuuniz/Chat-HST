@@ -1,5 +1,6 @@
 package br.com.hst.server;
 
+import java.awt.Menu;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class ClientHandler implements Runnable {
 		try {
 			int opcao = 999;
 			while (opcao != 4) {
-				dos.writeUTF("menu");
+				dos.writeUTF(MenuConstants.MENU);
 				opcao = dis.readInt();
 				switch (opcao) {
 				case 1:
@@ -54,7 +55,7 @@ public class ClientHandler implements Runnable {
 	}
 
 	private void listUser() throws IOException {
-		dos.writeUTF("1");
+		dos.writeUTF(MenuConstants.LIST_USERS);
 		clientList = Server.getClientList();
 		dos.writeInt(clientList.size());
 		clientList.forEach((key, value) -> {
@@ -69,7 +70,7 @@ public class ClientHandler implements Runnable {
 	private void sendFile(String target) {
 		try {
 			DataOutputStream targetClient = Server.getClientList().get(target).getDataOutputStream();
-			targetClient.writeUTF("3");
+			targetClient.writeUTF(MenuConstants.SEND_FILES);
 
 			String filename = dis.readUTF();
 			int fileSize = dis.readInt();
