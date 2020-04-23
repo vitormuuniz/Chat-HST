@@ -66,8 +66,6 @@ public class RequestHandler {
 					try {
 						dos.writeInt(opcao);
 						switch (opcao) {
-						case 1:
-							break;
 						case 2:
 							break;
 						case 3:
