@@ -28,7 +28,7 @@ public class RequestHandler {
 					try {						
 						String opcao = dis.readUTF();
 						switch (opcao) {
-						case MenuConstants.MENU:
+						case "menu":
 							System.out.println("\n======= Escolha uma operação =======\n" 
 									+ "  1 - Visualizar Usuários Online\r\n"
 									+ "  2 - Enviar mensagem\r\n" 
@@ -36,12 +36,12 @@ public class RequestHandler {
 									+ "  4 - Sair\n"
 									+ "====================================\n");
 							break;
-						case MenuConstants.LIST_USERS:
+						case "1":
 							receiveList(dis);
 							break;
 						case "2":
 							break;
-						case MenuConstants.RECIEVER_FILES:
+						case "3":
 							receiveFile(dis);
 							break;
 						}

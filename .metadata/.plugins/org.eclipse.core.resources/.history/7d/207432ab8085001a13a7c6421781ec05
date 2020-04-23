@@ -39,9 +39,9 @@ public class RequestHandler {
 						case MenuConstants.LIST_USERS:
 							receiveList(dis);
 							break;
-						case "2":
-							break;
 						case MenuConstants.RECIEVER_FILES:
+							break;
+						case "3":
 							receiveFile(dis);
 							break;
 						}
