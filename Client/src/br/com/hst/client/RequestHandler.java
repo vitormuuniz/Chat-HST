@@ -26,21 +26,21 @@ public class RequestHandler {
 			synchronized public void run() {
 				while (true) {
 					try {						
-						String menu  = dis.readUTF();
-						System.out.println(menu);
-						
 						String opcao = dis.readUTF();
 						switch (opcao) {
-						case "lista_usuario":
+						case "1":
 							receiveList(dis);
 							break;
-						case "arquivo":
+						case "3":
 							receiveFile(dis);
 							break;
-						case "fecha_conexao":
-							closeConnection(dis);
-							client.close();
-							System.exit(0);
+						case "menu":
+							System.out.println("\n======= Escolha uma operação =======\n" 
+									+ "  1 - Visualizar Usuários Online\r\n"
+									+ "  2 - Enviar mensagem\r\n" 
+									+ "  3 - Enviar arquivos\r\n" 
+									+ "  4 - Sair\n"
+									+ "====================================\n");
 							break;
 						default:
 							System.out.println("Operação não existente! Opção: " + opcao);
@@ -62,7 +62,6 @@ public class RequestHandler {
 			synchronized public void run() {
 				while (true) {
 					Scanner sc = new Scanner(System.in);
-
 					int opcao = sc.nextInt();
 					try {
 						dos.writeInt(opcao);
@@ -75,6 +74,9 @@ public class RequestHandler {
 							sendFile(dos);
 							break;
 						case 4:
+							System.out.println("Encerrando conexão...");
+							client.close();
+							System.exit(0);
 							break;
 						}
 					} catch (IOException e) {
