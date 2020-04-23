@@ -39,7 +39,7 @@ public class RequestHandler {
 									+ "====================================\n");
 							break;
 						case MenuConstants.LIST_USERS:
-							receiveList(dis);
+							receiveUsersList(dis);
 							break;
 						case "2":
 							break;
@@ -74,9 +74,7 @@ public class RequestHandler {
 							sendFile(dos);
 							break;
 						case 4:
-							System.out.println("Encerrando conexão...");
-							client.close();
-							System.exit(0);
+							closeConnection(dis);
 							break;
 						}
 					} catch (IOException e) {
@@ -169,11 +167,12 @@ public class RequestHandler {
 	}
 
 	protected void closeConnection(DataInputStream dis) throws IOException {
-		String close = dis.readUTF();
-		System.out.println(close);
+		System.out.println("Encerrando conexão...");
+		client.close();
+		System.exit(0);
 	}
 
-	protected void receiveList(DataInputStream dis) throws IOException {
+	protected void receiveUsersList(DataInputStream dis) throws IOException {
 		int num = dis.readInt();
 		System.out.println("\nQuantidade de Usuários: " + num);
 		for (int i = 0; i < num; i++) {
