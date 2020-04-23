@@ -43,7 +43,7 @@ public class RequestHandler {
 							break;
 						case "2":
 							break;
-						case MenuConstants.RECIEVER_FILES:
+						case MenuConstants.RECEIVE_FILE:
 							receiveFile(dis);
 							break;
 						}
