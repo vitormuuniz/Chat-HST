@@ -92,6 +92,8 @@ public class ClientHandler implements Runnable {
 				targetClient.write(buffer);
 				remaining -= buffer.length;
 			}
+			System.out.println("\nArquivo " + filename + " recebido e redirecionado para " + target);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Falha ao ler request");

@@ -31,12 +31,7 @@ public class RequestHandler {
 						String opcao = dis.readUTF();
 						switch (opcao) {
 						case MenuConstants.MENU:
-							System.out.println("\n======= Escolha uma operação =======\n" 
-									+ "  1 - Visualizar Usuários Online\r\n"
-									+ "  2 - Enviar mensagem\r\n" 
-									+ "  3 - Enviar arquivos\r\n" 
-									+ "  4 - Sair\n"
-									+ "====================================\n");
+							showMenu();
 							break;
 						case MenuConstants.LIST_USERS:
 							receiveUsersList(dis);
@@ -45,12 +40,22 @@ public class RequestHandler {
 							break;
 						case MenuConstants.RECEIVE_FILE:
 							receiveFile(dis);
+							showMenu();
 							break;
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
+			}
+
+			private void showMenu() {
+				System.out.println("\n======= Escolha uma operação =======\n" 
+						+ "  1 - Visualizar Usuários Online\r\n"
+						+ "  2 - Enviar mensagem\r\n" 
+						+ "  3 - Enviar arquivos\r\n" 
+						+ "  4 - Sair\n"
+						+ "====================================\n");
 			}
 		});
 		t.start();
@@ -119,6 +124,7 @@ public class RequestHandler {
 				dos.write(buffer);
 				remaining -= buffer.length;
 			}
+			System.out.println("\nArquivo " + filename + " enviado para " + target);
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar arquivo");
 		}
