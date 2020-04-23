@@ -39,11 +39,11 @@ public class RequestHandler {
 						case "1":
 							receiveList(dis);
 							break;
+						case "2":
+							break;
 						case "3":
 							receiveFile(dis);
 							break;
-						default:
-							System.out.println("Operação não existente! Opção: " + opcao);
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -78,6 +78,8 @@ public class RequestHandler {
 							client.close();
 							System.exit(0);
 							break;
+						default:
+							System.out.println("Operação "+opcao+" não existente!");
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
