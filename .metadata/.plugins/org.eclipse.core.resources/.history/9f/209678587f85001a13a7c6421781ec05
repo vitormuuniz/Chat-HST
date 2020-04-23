@@ -1,0 +1,10 @@
+package br.com.hst.server;
+
+public class MenuConstants {
+	
+	public static final Integer LIST_USERS = 3;	
+	public static final Integer SEND_MESSAGE = 3;
+	public static final Integer SEND_FILES = 3;	
+	public static final Integer EXIT = 3;
+
+}

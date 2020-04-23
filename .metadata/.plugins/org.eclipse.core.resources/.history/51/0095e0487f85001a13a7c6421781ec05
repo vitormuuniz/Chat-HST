@@ -1,0 +1,5 @@
+package br.com.hst.server;
+
+public class MenuConstants {
+
+}

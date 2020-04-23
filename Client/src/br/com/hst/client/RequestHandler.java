@@ -6,26 +6,46 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class RequestHandler {
-	protected void startReceiveThread(DataInputStream dis, DataOutputStream dos) {
-		Thread t = new Thread(new Runnable() {
+	
+	private Socket client;
 
+	public RequestHandler(Socket client) {
+		this.client = client;
+	}
+
+	protected synchronized void startReceiveThread(DataInputStream dis, DataOutputStream dos) {
+		Thread t = new Thread(new Runnable() {
 			@Override
 			synchronized public void run() {
 				while (true) {
-					try {
+					try {						
 						String opcao = dis.readUTF();
-						switch(opcao) {
-						case "arquivo":
+						switch (opcao) {
+						case MenuConstants.MENU:
+							System.out.println("\n======= Escolha uma operação =======\n" 
+									+ "  1 - Visualizar Usuários Online\r\n"
+									+ "  2 - Enviar mensagem\r\n" 
+									+ "  3 - Enviar arquivos\r\n" 
+									+ "  4 - Sair\n"
+									+ "====================================\n");
+							break;
+						case MenuConstants.LIST_USERS:
+							receiveList(dis);
+							break;
+						case "2":
+							break;
+						case MenuConstants.RECIEVER_FILES:
 							receiveFile(dis);
+							break;
 						}
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -34,7 +54,7 @@ public class RequestHandler {
 		t.start();
 	}
 
-	protected void startInputThread(DataInputStream dis, DataOutputStream dos) {
+	protected synchronized void startInputThread(DataInputStream dis, DataOutputStream dos) {
 
 		Thread t = new Thread(new Runnable() {
 
@@ -42,20 +62,27 @@ public class RequestHandler {
 			synchronized public void run() {
 				while (true) {
 					Scanner sc = new Scanner(System.in);
-					System.out.println("Digite a opção: \n" + "1- Enviar arquivo\n" + "2- Sair");
-					int opcao = sc.nextInt();
+					int option = sc.nextInt();
 					try {
-						dos.writeInt(opcao);
-						switch (opcao) {
-						case 1:
-							sendFile(dos);
-							break;
+						dos.writeInt(option);
+						switch (option) {
 						case 2:
 							break;
+						case 3:
+							sendFile(dos);
+							break;
+						case 4:
+							System.out.println("Encerrando conexão...");
+							client.close();
+							System.exit(0);
+							break;
+						default:
+							System.out.println("Operação "+option+" não existente!");
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
+
 				}
 			}
 		});
@@ -67,7 +94,7 @@ public class RequestHandler {
 		try {
 
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Digite o nome do destinatÃ¡rio: ");
+			System.out.println("Digite o nome do destinatário: ");
 			String target = sc.next();
 			dos.writeUTF(target);
 
@@ -138,6 +165,20 @@ public class RequestHandler {
 				} catch (IOException e) {
 				}
 			}
+		}
+	}
+
+	protected void closeConnection(DataInputStream dis) throws IOException {
+		String close = dis.readUTF();
+		System.out.println(close);
+	}
+
+	protected void receiveList(DataInputStream dis) throws IOException {
+		int num = dis.readInt();
+		System.out.println("\nQuantidade de Usuários: " + num);
+		for (int i = 0; i < num; i++) {
+			String users = dis.readUTF();
+			System.out.println(users);
 		}
 	}
 }
