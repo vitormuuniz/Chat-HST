@@ -28,12 +28,6 @@ public class RequestHandler {
 					try {						
 						String opcao = dis.readUTF();
 						switch (opcao) {
-						case "1":
-							receiveList(dis);
-							break;
-						case "3":
-							receiveFile(dis);
-							break;
 						case "menu":
 							System.out.println("\n======= Escolha uma operação =======\n" 
 									+ "  1 - Visualizar Usuários Online\r\n"
@@ -41,6 +35,12 @@ public class RequestHandler {
 									+ "  3 - Enviar arquivos\r\n" 
 									+ "  4 - Sair\n"
 									+ "====================================\n");
+							break;
+						case "1":
+							receiveList(dis);
+							break;
+						case "3":
+							receiveFile(dis);
 							break;
 						default:
 							System.out.println("Operação não existente! Opção: " + opcao);
