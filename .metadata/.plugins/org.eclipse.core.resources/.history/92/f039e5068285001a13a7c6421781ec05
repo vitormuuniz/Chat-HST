@@ -7,8 +7,6 @@ import java.net.Socket;
 import java.util.Map;
 import java.util.Scanner;
 
-import br.com.hst.server.constants.MenuConstants;
-
 public class ClientHandler implements Runnable {
 	private Map<String, ClientHandler> clientList;
 	private Socket client;
