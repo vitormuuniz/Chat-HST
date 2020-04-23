@@ -12,8 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import br.com.hst.client.constants.MenuConstants;
-
 public class RequestHandler {
 	
 	private Socket client;
@@ -78,6 +76,8 @@ public class RequestHandler {
 							client.close();
 							System.exit(0);
 							break;
+						default:
+							System.out.println("Operação "+option+" não existente!");
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
