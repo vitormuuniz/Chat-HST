@@ -14,12 +14,13 @@ public class Server {
 	private static Socket client;
 	private static ServerSocket serverSocket;
 	private static Map<String, ClientHandler> clientList;
+	private static Scanner sc;
 
 	public static void main(String[] args) {
 		System.out.println("Digite a porta desejada do servidor: ");
 		try {
 
-			Scanner sc = new Scanner(System.in);
+			sc = new Scanner(System.in);
 			int port = sc.nextInt();
 			serverSocket = new ServerSocket(port);
 			System.out.println("------------------ Servidor iniciado na porta " + port + " ------------------");
@@ -45,12 +46,6 @@ public class Server {
 					System.out.println("Falha ao encerrar o servidor");
 				}
 			}
-		}
-	}
-
-	private static void sendToAll(String message) {
-		for (ClientHandler client : clientList.values()) {
-			client.sendMessage(message);
 		}
 	}
 

@@ -7,7 +7,6 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.Scanner;
 
 import br.com.hst.server.constants.MenuConstants;
 
@@ -17,7 +16,6 @@ public class ClientHandler implements Runnable {
 	private String name;
 	private DataInputStream dis;
 	private DataOutputStream dos;
-	private Scanner sc;
 
 	public ClientHandler(Socket client, Map<String, ClientHandler> clientList, String name, DataInputStream dis,
 			DataOutputStream dos) {
@@ -31,23 +29,23 @@ public class ClientHandler implements Runnable {
 	@Override
 	public void run() {
 		try {
-			int opcao = 999;
-			while (opcao != 4) {
+			String opcao = "";
+			while (!opcao.equals(MenuConstants.EXIT)) {
 				dos.writeUTF(MenuConstants.MENU);
-				opcao = dis.readInt();
+				opcao = dis.readUTF();
 				switch (opcao) {
-				case 1:
+				case MenuConstants.LIST_USERS:
 					listUser();
 					break;
-				case 2:
+				case MenuConstants.SEND_MESSAGE:
 					String targetMessage = dis.readUTF();
 					sendMessage(targetMessage);
 					break;
-				case 3:
+				case MenuConstants.SEND_FILE:
 					String target = dis.readUTF();
 					sendFile(target);
 					break;
-				case 4:
+				case MenuConstants.EXIT:
 					System.out.println("O cliente " + this.name + " fechou a conexão.");
 					client.close();
 					clientList.remove(this.name);
@@ -75,7 +73,7 @@ public class ClientHandler implements Runnable {
 	private void sendFile(String target) {
 		try {
 			DataOutputStream targetClient = Server.getClientList().get(target).getDataOutputStream();
-			targetClient.writeUTF(MenuConstants.SEND_FILES);
+			targetClient.writeUTF(MenuConstants.RECEIVE_FILE);
 
 			String filename = dis.readUTF();
 			int fileSize = dis.readInt();
@@ -115,7 +113,7 @@ public class ClientHandler implements Runnable {
 			String message = "";
 			
 			do {
-				targetClient.writeUTF(MenuConstants.SEND_MESSAGE);				
+				targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);				
 				message = dis.readUTF();
 				
 				SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");

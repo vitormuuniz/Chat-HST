@@ -17,6 +17,7 @@ import br.com.hst.client.constants.MenuConstants;
 public class RequestHandler {
 	
 	private Socket client;
+	private Scanner sc;
 
 	public RequestHandler(Socket client) {
 		this.client = client;
@@ -36,8 +37,9 @@ public class RequestHandler {
 						case MenuConstants.LIST_USERS:
 							receiveUsersList(dis);
 							break;
-						case "2":
+						case MenuConstants.RECEIVE_MESSAGE:
 							receiveMessage(dis);
+							showMenu();
 							break;
 						case MenuConstants.RECEIVE_FILE:
 							receiveFile(dis);
@@ -69,25 +71,24 @@ public class RequestHandler {
 			@Override
 			synchronized public void run() {
 				while (true) {
-					Scanner sc = new Scanner(System.in);
-					int option = sc.nextInt();
 					try {
-						dos.writeInt(option);
+						sc = new Scanner(System.in);
+						String option = sc.nextLine();
+						dos.writeUTF(option);
 						switch (option) {
-						case 2:
+						case MenuConstants.SEND_MESSAGE:
 							sendMessage(dos);
 							break;
-						case 3:
+						case MenuConstants.SEND_FILE:
 							sendFile(dos);
 							break;
-						case 4:
+						case MenuConstants.EXIT:
 							closeConnection();
 							break;
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-
 				}
 			}			
 		});
@@ -96,7 +97,7 @@ public class RequestHandler {
 	
 	private void sendMessage(DataOutputStream dos) {
 		try {
-			Scanner sc = new Scanner(System.in);
+			sc = new Scanner(System.in);
 			System.out.println("Digite o nome do destinatário: ");
 			String target = sc.next();
 			dos.writeUTF(target);			
@@ -118,8 +119,7 @@ public class RequestHandler {
 	private void sendFile(DataOutputStream dos) {
 		FileInputStream fis = null;
 		try {
-
-			Scanner sc = new Scanner(System.in);
+			sc = new Scanner(System.in);
 			System.out.println("Digite o nome do destinatário: ");
 			String target = sc.next();
 			dos.writeUTF(target);

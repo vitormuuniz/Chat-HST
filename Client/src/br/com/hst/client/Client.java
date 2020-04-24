@@ -15,9 +15,11 @@ import java.util.Scanner;
  */
 public class Client {
 
+	private static Scanner sc;
+
 	public static void main(String[] args) {
 		try {
-			Scanner sc = new Scanner(System.in);
+			sc = new Scanner(System.in);
 			System.out.println("Digite a porta do servidor: ");
 			int port = sc.nextInt();
 			System.out.println("Digite o seu nome: ");
