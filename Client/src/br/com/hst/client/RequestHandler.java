@@ -95,26 +95,28 @@ public class RequestHandler {
 		t.start();
 	}
 	
-	private void sendMessage(DataOutputStream dos) {
-		try {
-			sc = new Scanner(System.in);
-			System.out.println("Digite o nome do destinatário: ");
-			String target = sc.next();
-			dos.writeUTF(target);			
-			String message = "";
-			System.out.print("> Para " + target + ": ");		
-			
-			while(!message.equals("!exit")) {					
-				message = sc.nextLine();
-				if(!message.isBlank() && !message.isBlank()) {
-					dos.writeUTF(message);
-					System.out.print("> Para " + target + ": ");
-				}				
-			}			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}		
-	}
+    private void sendMessage(DataOutputStream dos) {
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Digite o nome do destinatário: ");
+            String target = sc.next();
+            dos.writeUTF(target);           
+            String message = null;   
+            message = sc.nextLine();
+            while(!message.equals("!exit")) {   
+                System.out.print("> Para " + target + ": ");
+                message = sc.nextLine();
+                if(!message.isBlank()) {
+                    dos.writeUTF(message);
+                }
+               
+            }           
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+       
+    }
+
 
 	private void sendFile(DataOutputStream dos) {
 		FileInputStream fis = null;
