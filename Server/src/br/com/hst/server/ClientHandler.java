@@ -4,6 +4,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -38,6 +40,8 @@ public class ClientHandler implements Runnable {
 					listUser();
 					break;
 				case 2:
+					String targetMessage = dis.readUTF();
+					sendMessage(targetMessage);
 					break;
 				case 3:
 					String target = dis.readUTF();
@@ -104,9 +108,24 @@ public class ClientHandler implements Runnable {
 		return dos;
 	}
 
-	protected void sendMessage(String message) {
+	protected void sendMessage(String targetMessage) {
 		try {
-			dos.writeUTF(message);
+			DataOutputStream targetClient = Server.getClientList().get(targetMessage).getDataOutputStream();
+			
+			String message = "";
+			
+			do {
+				targetClient.writeUTF(MenuConstants.SEND_MESSAGE);				
+				message = dis.readUTF();
+				
+				SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+				String hora = dateFormat.format(new Date());
+				
+				if(!message.equals("!exit")) {
+					targetClient.writeUTF("> " + name + " ["  + hora + "]: " + message);
+				}				
+			} while (!message.equals("!exit"));
+
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem");
 		}

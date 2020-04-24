@@ -37,6 +37,7 @@ public class RequestHandler {
 							receiveUsersList(dis);
 							break;
 						case "2":
+							receiveMessage(dis);
 							break;
 						case MenuConstants.RECEIVE_FILE:
 							receiveFile(dis);
@@ -55,7 +56,7 @@ public class RequestHandler {
 						+ "  2 - Enviar mensagem\r\n" 
 						+ "  3 - Enviar arquivos\r\n" 
 						+ "  4 - Sair\n"
-						+ "====================================\n");
+						+ "====================================");
 			}
 		});
 		t.start();
@@ -74,12 +75,13 @@ public class RequestHandler {
 						dos.writeInt(option);
 						switch (option) {
 						case 2:
+							sendMessage(dos);
 							break;
 						case 3:
 							sendFile(dos);
 							break;
 						case 4:
-							closeConnection(dis);
+							closeConnection();
 							break;
 						}
 					} catch (IOException e) {
@@ -87,9 +89,30 @@ public class RequestHandler {
 					}
 
 				}
-			}
+			}			
 		});
 		t.start();
+	}
+	
+	private void sendMessage(DataOutputStream dos) {
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Digite o nome do destinatário: ");
+			String target = sc.next();
+			dos.writeUTF(target);			
+			String message = "";
+			System.out.print("> Para " + target + ": ");		
+			
+			while(!message.equals("!exit")) {					
+				message = sc.nextLine();
+				if(!message.isBlank() && !message.isBlank()) {
+					dos.writeUTF(message);
+					System.out.print("> Para " + target + ": ");
+				}				
+			}			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 	}
 
 	private void sendFile(DataOutputStream dos) {
@@ -172,10 +195,19 @@ public class RequestHandler {
 		}
 	}
 
-	protected void closeConnection(DataInputStream dis) throws IOException {
+	protected void closeConnection() throws IOException {
 		System.out.println("Encerrando conexão...");
 		client.close();
 		System.exit(0);
+	}
+	
+	protected void receiveMessage(DataInputStream dis) {
+		try {
+			String message = dis.readUTF();
+			System.out.println(message);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	protected void receiveUsersList(DataInputStream dis) throws IOException {
