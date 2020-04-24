@@ -112,17 +112,19 @@ public class ClientHandler implements Runnable {
 			
 			String message = "";
 			
-			do {
-				targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);				
+			while (!message.equals("!exit")) {
 				message = dis.readUTF();
 				
 				SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 				String hora = dateFormat.format(new Date());
 				
 				if(!message.equals("!exit")) {
+					targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);				
 					targetClient.writeUTF("> " + name + " ["  + hora + "]: " + message);
-				}				
-			} while (!message.equals("!exit"));
+				} else {
+					
+				}
+			}
 
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem");
