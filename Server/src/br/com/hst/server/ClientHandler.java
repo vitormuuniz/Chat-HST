@@ -111,21 +111,14 @@ public class ClientHandler implements Runnable {
 	protected void sendMessage(String targetMessage) {
 		try {
 			DataOutputStream targetClient = Server.getClientList().get(targetMessage).getDataOutputStream();
-			
-			String message = "";
-			
-			do {
-				targetClient.writeUTF(MenuConstants.SEND_MESSAGE);				
-				message = dis.readUTF();
-				
-				SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-				String hora = dateFormat.format(new Date());
-				
-				if(!message.equals("!exit")) {
-					targetClient.writeUTF("> " + name + " ["  + hora + "]: " + message);
-				}				
-			} while (!message.equals("!exit"));
+			targetClient.writeUTF(MenuConstants.SEND_MESSAGE);
+			String message = dis.readUTF();
 
+			SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+			String hora = dateFormat.format(new Date());
+			targetClient.writeUTF(name + " [" + hora + "]: " + message);
+
+			targetClient.writeUTF(MenuConstants.MENU);
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem");
 		}

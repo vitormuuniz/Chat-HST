@@ -55,8 +55,8 @@ public class RequestHandler {
 						+ "  1 - Visualizar Usuários Online\r\n"
 						+ "  2 - Enviar mensagem\r\n" 
 						+ "  3 - Enviar arquivos\r\n" 
-						+ "  4 - Sair\n"
-						+ "====================================");
+						+ "  4 - Sair\n");
+				System.out.print("> ");
 			}
 		});
 		t.start();
@@ -99,17 +99,12 @@ public class RequestHandler {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Digite o nome do destinatário: ");
 			String target = sc.next();
-			dos.writeUTF(target);			
-			String message = "";
-			System.out.print("> Para " + target + ": ");		
-			
-			while(!message.equals("!exit")) {					
-				message = sc.nextLine();
-				if(!message.isBlank() && !message.isBlank()) {
-					dos.writeUTF(message);
-					System.out.print("> Para " + target + ": ");
-				}				
-			}			
+			dos.writeUTF(target);	
+			sc.nextLine();
+			System.out.print("> Para " + target + ": ");	
+			String message = sc.nextLine();
+			dos.writeUTF(message);
+				
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
