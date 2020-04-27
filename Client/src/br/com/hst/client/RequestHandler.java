@@ -56,7 +56,7 @@ public class RequestHandler {
 			}
 
 			private void showMenu() {
-				System.out.println("\n1 - Visualizar usuários online\r\n" + 
+				System.out.println("\n==============================\n1 - Visualizar usuários online\r\n" + 
 							"2 - Enviar mensagem\r\n" +
 							"3 - Enviar arquivos\r\n" + 
 							"4 - Sair\n");
