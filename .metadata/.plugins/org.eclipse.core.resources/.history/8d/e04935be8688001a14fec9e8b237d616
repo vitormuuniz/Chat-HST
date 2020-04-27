@@ -30,9 +30,8 @@ public class Server {
 				System.out.println("Novo cliente conectado: " + client);
 				DataInputStream dis = new DataInputStream(client.getInputStream());
 				DataOutputStream dos = new DataOutputStream(client.getOutputStream());
-				dos.writeInt(clientList.size());
 				clientList.forEach((key, value) -> { 
-					try {						
+					try {
 						dos.writeUTF(key);
 					} catch (IOException e) {
 						e.printStackTrace();

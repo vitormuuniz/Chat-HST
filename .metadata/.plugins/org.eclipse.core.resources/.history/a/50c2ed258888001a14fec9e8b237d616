@@ -30,11 +30,8 @@ public class Client {
 			DataOutputStream dos = new DataOutputStream(client.getOutputStream());
 			System.out.println("Digite o seu nome: ");
 			String name = sc.next();
-			carregarListaUsuarios(dis);
-			while(listUsers.contains(name)) {
-				System.out.println("Usuário existente.\nDigite o seu nome: ");
-				name = sc.next();
-			}
+			carregarListaUsuarios();
+
 			dos.writeUTF(name);
 			requestHandler.startReceiveThread(dis, dos);
 			requestHandler.startInputThread(dis, dos);

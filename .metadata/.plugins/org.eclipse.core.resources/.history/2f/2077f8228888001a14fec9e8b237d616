@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * @author internship_team Client Side It's here what you inform your name and
- *         server port.
+ * @author internship_team
+ * Client Side 
+ * It's here what you inform your name and server port.
  */
 public class Client {
 
@@ -27,14 +28,17 @@ public class Client {
 			Socket client = new Socket(InetAddress.getLocalHost().getHostAddress(), port);
 			RequestHandler requestHandler = new RequestHandler(client);
 			DataInputStream dis = new DataInputStream(client.getInputStream());
-			DataOutputStream dos = new DataOutputStream(client.getOutputStream());
+			DataOutputStream dos = new DataOutputStream(client.getOutputStream());			
 			System.out.println("Digite o seu nome: ");
 			String name = sc.next();
-			carregarListaUsuarios(dis);
-			while(listUsers.contains(name)) {
-				System.out.println("Usuário existente.\nDigite o seu nome: ");
-				name = sc.next();
-			}
+			int size = dis.readInt();
+			for(int i = 0; i < size; i++) {
+				String names = dis.readUTF();
+				if(names.contains(name)) {
+					System.out.println("Digite o seu nome: ");
+					name = sc.next();
+				}
+			}			
 			dos.writeUTF(name);
 			requestHandler.startReceiveThread(dis, dos);
 			requestHandler.startInputThread(dis, dos);
@@ -42,19 +46,6 @@ public class Client {
 			System.out.println("Erro desconhecido");
 		} catch (IOException e) {
 			System.out.println("Falha ao conectar ao servidor");
-		}
-	}
-
-	private static void carregarListaUsuarios(DataInputStream dis) {
-		int size;
-		try {
-			size = dis.readInt();
-			for (int i = 0; i < size; i++) {
-				String names = dis.readUTF();
-				listUsers.add(names);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 }
