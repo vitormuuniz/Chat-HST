@@ -78,6 +78,7 @@ public class ClientHandler implements Runnable {
 			targetClient.writeUTF(MenuConstants.RECEIVE_FILE);
 
 			String filename = dis.readUTF();
+			filename = filename.substring(filename.lastIndexOf("/") + 1);
 			int fileSize = dis.readInt();
 			int bufferSize = fileSize < 4096 ? fileSize : 4096;
 
