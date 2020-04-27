@@ -30,7 +30,7 @@ public class Client {
 			DataOutputStream dos = new DataOutputStream(client.getOutputStream());
 			System.out.println("Digite o seu nome: ");
 			String name = sc.next();
-			loadListUsers(dis);
+			carregarListaUsuarios(dis);
 			while(listUsers.contains(name)) {
 				System.out.println("Usuário existente.\nDigite o seu nome: ");
 				name = sc.next();
@@ -45,7 +45,7 @@ public class Client {
 		}
 	}
 
-	private static void loadListUsers(DataInputStream dis) {
+	private static void carregarListaUsuarios(DataInputStream dis) {
 		int size;
 		try {
 			size = dis.readInt();
