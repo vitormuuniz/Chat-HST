@@ -56,9 +56,11 @@ public class RequestHandler {
 			}
 
 			private void showMenu() {
-				System.out.print("\n  1 - Visualizar Usuários Online\r\n" + "  2 - Enviar mensagem\r\n"
-						+ "  3 - Enviar arquivos\r\n" + "  4 - Sair\n");
-				System.out.print("> Escolha uma operação: ");
+				System.out.println("\n1 - Visualizar usuários online\r\n" + 
+							"2 - Enviar mensagem\r\n" +
+							"3 - Enviar arquivos\r\n" + 
+							"4 - Sair\n");
+				System.out.println("> Escolha uma operação: ");
 			}
 		});
 		t.start();
@@ -165,7 +167,7 @@ public class RequestHandler {
 			String filename = dis.readUTF();
 			System.out.println("\n\nArquivo recebido: " + filename);
 			int fileSize = dis.readInt();
-			System.out.println("Tamanho do arquivo: " + fileSize);
+			System.out.println("Tamanho do arquivo: " + fileSize + " bytes\n");
 
 			Path path = Paths.get("out" + File.separator + filename);
 			if (!Files.exists(path.getParent())) {
@@ -218,7 +220,7 @@ public class RequestHandler {
 
 	protected void receiveUsersList(DataInputStream dis) throws IOException {
 		int num = dis.readInt();
-		System.out.println("\nPessoas Disponíveis: " + num);
+		System.out.println("\nNúmero de usuários online: " + num);
 		for (int i = 0; i < num; i++) {
 			String user = dis.readUTF();
 			listUsers.add(user);
@@ -227,14 +229,18 @@ public class RequestHandler {
 	}
 
 	private String userTarget(String name, Scanner sc) {
+		System.out.println("\nInforme o Destinatário: ");
 		while (true) {
-			System.out.print("\nInforme o Destinatário: ");
 			String target = sc.next();
 
-			if (!listUsers.contains(target))
+			if (!listUsers.contains(target)) {
+				System.err.println("Destinatário inválido, digite novamente:");
 				continue;
-			if (target.equals(name))
+			}
+			if (target.equals(name)) {
+				System.err.println("Você digitou o próprio nome, digite um destinatário válido:");
 				continue;
+			}
 
 			return target;
 		}

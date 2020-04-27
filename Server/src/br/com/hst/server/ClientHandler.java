@@ -14,7 +14,6 @@ public class ClientHandler implements Runnable {
 	private Map<String, ClientHandler> clientList;
 	private Socket client;
 	private String name;
-	private boolean validar = false;
 	private DataInputStream dis;
 	private DataOutputStream dos;
 
@@ -118,7 +117,7 @@ public class ClientHandler implements Runnable {
 			String hora = dateFormat.format(new Date());
 
 			targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);
-			targetClient.writeUTF("\n\nVocê recebeu uma mensagem.\n" + name + " [" + hora + "]: " + message);
+			targetClient.writeUTF("\n\nVocê recebeu uma mensagem:\n" + name + " disse [" + hora + "]: " + message +"\n");
 
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem");
