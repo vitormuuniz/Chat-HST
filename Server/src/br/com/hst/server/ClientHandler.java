@@ -14,6 +14,7 @@ public class ClientHandler implements Runnable {
 	private Map<String, ClientHandler> clientList;
 	private Socket client;
 	private String name;
+	private boolean validar = false;
 	private DataInputStream dis;
 	private DataOutputStream dos;
 
@@ -38,6 +39,7 @@ public class ClientHandler implements Runnable {
 					listUser();
 					break;
 				case MenuConstants.SEND_MESSAGE:
+					listUser();
 					String targetMessage = dis.readUTF();
 					sendMessage(targetMessage);
 					break;
@@ -67,7 +69,7 @@ public class ClientHandler implements Runnable {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		});
+		});		
 	}
 
 	private void sendFile(String target) {
