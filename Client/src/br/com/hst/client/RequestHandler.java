@@ -10,14 +10,17 @@ import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import br.com.hst.client.constants.MenuConstants;
 
 public class RequestHandler {
-	
+
 	private Socket client;
 	private Scanner sc;
+	private List<String> listUsers = new ArrayList<String>();
 
 	public RequestHandler(Socket client) {
 		this.client = client;
@@ -28,7 +31,7 @@ public class RequestHandler {
 			@Override
 			synchronized public void run() {
 				while (true) {
-					try {						
+					try {
 						String opcao = dis.readUTF();
 						switch (opcao) {
 						case MenuConstants.MENU:
@@ -53,17 +56,15 @@ public class RequestHandler {
 			}
 
 			private void showMenu() {
-				System.out.print("\n  1 - Visualizar UsuÃ¡rios Online\r\n"
-						+ "  2 - Enviar mensagem\r\n" 
-						+ "  3 - Enviar arquivos\r\n" 
-						+ "  4 - Sair\n");
-				System.out.print("> Escolha uma operaÃ§Ã£o: ");
+				System.out.print("\n  1 - Visualizar Usuários Online\r\n" + "  2 - Enviar mensagem\r\n"
+						+ "  3 - Enviar arquivos\r\n" + "  4 - Sair\n");
+				System.out.print("> Escolha uma operação: ");
 			}
 		});
 		t.start();
 	}
 
-	protected synchronized void startInputThread(DataInputStream dis, DataOutputStream dos) {
+	protected synchronized void startInputThread(DataInputStream dis, DataOutputStream dos, String name) {
 
 		Thread t = new Thread(new Runnable() {
 
@@ -76,10 +77,10 @@ public class RequestHandler {
 						dos.writeUTF(option);
 						switch (option) {
 						case MenuConstants.SEND_MESSAGE:
-							sendMessage(dos);
+							sendMessage(dos, name);
 							break;
 						case MenuConstants.SEND_FILE:
-							sendFile(dos);
+							sendFile(dos, name);
 							break;
 						case MenuConstants.EXIT:
 							closeConnection();
@@ -89,43 +90,41 @@ public class RequestHandler {
 						e.printStackTrace();
 					}
 				}
-			}			
+			}
 		});
 		t.start();
 	}
-	
-    private void sendMessage(DataOutputStream dos) {
-        try {
-            Scanner sc = new Scanner(System.in);            
-            Thread.sleep(100);
-            System.out.println("\nDigite o nome do destinatï¿½rio: ");
-            String target = sc.next();
-            dos.writeUTF(target);           
-            String message = null;   
-            message = sc.nextLine();
-            while(!message.equals("!exit")) {   
-                System.out.print("> Para " + target + ": ");
-                message = sc.nextLine();
-                if(!message.isBlank()) {
-                    dos.writeUTF(message);
-                }               
-            }           
-        } catch (IOException e) {
-        	System.out.println("Falha ao enviar mensagem.");
-        } catch (InterruptedException e) {
-			System.out.println("Falha ao listar usuï¿½rios.");
+
+	private void sendMessage(DataOutputStream dos, String name) {
+		try {
+			Scanner sc = new Scanner(System.in);
+			Thread.sleep(100);
+			String target = userTarget(name, sc);
+			dos.writeUTF(target);
+
+			String message = sc.nextLine();
+			System.out.print("> Para " + target + ": ");
+			
+			message = sc.nextLine();
+			
+			if (!message.isBlank()) {
+				dos.writeUTF(message);
+			}
+		} catch (IOException e) {
+			System.out.println("Falha ao enviar mensagem.");
+		} catch (InterruptedException e) {
+			System.out.println("Falha ao listar usuários.");
 		}
-       
-    }
+		listUsers.clear();
+	}
 
-
-	private void sendFile(DataOutputStream dos) {
+	private void sendFile(DataOutputStream dos, String name) {
 		FileInputStream fis = null;
 		try {
 			sc = new Scanner(System.in);
 			Thread.sleep(100);
-			System.out.println("\nDigite o nome do destinatï¿½rio: ");
-			String target = sc.next();
+
+			String target = userTarget(name, sc);
 			dos.writeUTF(target);
 
 			System.out.println("Digite o nome do Arquivo: ");
@@ -155,15 +154,16 @@ public class RequestHandler {
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar arquivo.");
 		} catch (InterruptedException e) {
-			System.out.println("Falha ao listar usuï¿½rios.");
+			System.out.println("Falha ao listar usuários.");
 		}
+		listUsers.clear();
 	}
 
 	private void receiveFile(DataInputStream dis) {
 		FileOutputStream fos = null;
 		try {
 			String filename = dis.readUTF();
-			System.out.println("Arquivo recebido: " + filename);
+			System.out.println("\n\nArquivo recebido: " + filename);
 			int fileSize = dis.readInt();
 			System.out.println("Tamanho do arquivo: " + fileSize);
 
@@ -202,11 +202,11 @@ public class RequestHandler {
 	}
 
 	protected void closeConnection() throws IOException {
-		System.out.println("Encerrando conexï¿½o...");
+		System.out.println("Encerrando conexão...");
 		client.close();
 		System.exit(0);
 	}
-	
+
 	protected void receiveMessage(DataInputStream dis) {
 		try {
 			String message = dis.readUTF();
@@ -218,10 +218,25 @@ public class RequestHandler {
 
 	protected void receiveUsersList(DataInputStream dis) throws IOException {
 		int num = dis.readInt();
-		System.out.println("\nPessoas Disponï¿½veis: " + num);
+		System.out.println("\nPessoas Disponíveis: " + num);
 		for (int i = 0; i < num; i++) {
-			String users = dis.readUTF();
-			System.out.println(users);
+			String user = dis.readUTF();
+			listUsers.add(user);
+			System.out.println(user);
+		}
+	}
+
+	private String userTarget(String name, Scanner sc) {
+		while (true) {
+			System.out.print("\nInforme o Destinatário: ");
+			String target = sc.next();
+
+			if (!listUsers.contains(target))
+				continue;
+			if (target.equals(name))
+				continue;
+
+			return target;
 		}
 	}
 }
