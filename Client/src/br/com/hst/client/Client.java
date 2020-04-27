@@ -32,7 +32,7 @@ public class Client {
 			String name = sc.next();
 			loadListUsers(dis);
 			while(listUsers.contains(name)) {
-				System.out.println("Usuário existente.\nDigite o seu nome: ");
+				System.out.println("Usuï¿½rio existente.\nDigite o seu nome: ");
 				name = sc.next();
 			}
 			dos.writeUTF(name);
