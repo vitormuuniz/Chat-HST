@@ -32,12 +32,12 @@ public class Client {
 			String name = sc.next();
 			loadListUsers(dis);
 			while(listUsers.contains(name)) {
-				System.out.println("Usuï¿½rio existente.\nDigite o seu nome: ");
+				System.out.println("Usuário já existente.\nDigite o seu nome: ");
 				name = sc.next();
 			}
 			dos.writeUTF(name);
 			requestHandler.startReceiveThread(dis, dos);
-			requestHandler.startInputThread(dis, dos);
+			requestHandler.startInputThread(dis, dos, name);
 		} catch (UnknownHostException e) {
 			System.out.println("Erro desconhecido");
 		} catch (IOException e) {

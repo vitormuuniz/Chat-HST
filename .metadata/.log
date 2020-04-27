@@ -4928,3 +4928,848 @@ java.lang.NullPointerException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+!SESSION 2020-04-27 13:50:44.171 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=11.0.6
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-04-27 13:52:05.257
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2020-04-27 13:52:06.514
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-04-27 13:52:06.514
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@117bfeb8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4781bb01,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:09.744
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:09.745
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@cce5ae3[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=1095)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:09.754
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:09.789
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-04-27 13:52:11.127
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\marcos_marossi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.689
+!MESSAGE Boot LS startup time from start to initialized: 2927ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.728
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.eIXSvXsHisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.733
+!MESSAGE subscribing to classpath changes: sts4.classpath.eIXSvXsH isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.736
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.738
+!MESSAGE subsribers = {sts4.classpath.eIXSvXsH=Send Classpath Notifications(102)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.739
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.740
+!MESSAGE project Client ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.741
+!MESSAGE project Server ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.741
+!MESSAGE Preparing classpath changed notification Client
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.742
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.742
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.743
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.eIXSvXsH => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.747
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.748
+!MESSAGE buffering callback sts4.classpath.eIXSvXsH Client false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.749
+!MESSAGE Preparing classpath changed notification Server
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.750
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.752
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.753
+!MESSAGE buffering callback sts4.classpath.eIXSvXsH Server false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.753
+!MESSAGE executing callback sts4.classpath.eIXSvXsH 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 13:52:12.918
+!MESSAGE executing callback sts4.classpath.eIXSvXsH SUCCESS [done]
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:53:19.007
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:53:41.741
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:53:43.402
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:53:47.050
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:54:01.162
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:55:46.847
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:56:04.966
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:56:17.648
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:56:28.708
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 13:57:21.378
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:00:05.785
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:00:07.689
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:00:13.476
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:00:30.487
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:01:09.008
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:02:28.118
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:03:07.612
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:03:10.047
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:03:40.787
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:03:43.755
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:04:14.655
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:04:17.663
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:04:53.765
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:04:54.411
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:06:48.691
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:07:51.213
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:07:54.124
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:08:10.971
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:08:32.317
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:08:50.478
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:09:14.044
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.jface.text 4 0 2020-04-27 14:09:56.594
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getStyleSheet(JavadocHover.java:943)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:795)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:678)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:670)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:33.062
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eIXSvXsH
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:33.063
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.eIXSvXsH
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:33.064
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:33.065
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eIXSvXsH => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:35.368
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:35.368
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@cce5ae3[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=1095)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:35.369
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.916
+!MESSAGE Boot LS startup time from start to initialized: 1547ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.948
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.zkPOvTXVisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.949
+!MESSAGE subscribing to classpath changes: sts4.classpath.zkPOvTXV isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.951
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.951
+!MESSAGE subsribers = {sts4.classpath.zkPOvTXV=Send Classpath Notifications(1527)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.952
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.952
+!MESSAGE project Client ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.953
+!MESSAGE project Server ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.953
+!MESSAGE Preparing classpath changed notification Client
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.954
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.954
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.955
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.zkPOvTXV => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.955
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.956
+!MESSAGE buffering callback sts4.classpath.zkPOvTXV Client false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.956
+!MESSAGE Preparing classpath changed notification Server
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.957
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.958
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.959
+!MESSAGE buffering callback sts4.classpath.zkPOvTXV Server false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.960
+!MESSAGE executing callback sts4.classpath.zkPOvTXV 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:13:36.990
+!MESSAGE executing callback sts4.classpath.zkPOvTXV SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:23:59.196
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.zkPOvTXV
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:23:59.198
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.zkPOvTXV
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:23:59.200
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:23:59.200
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.zkPOvTXV => OK
+!SESSION 2020-04-27 14:54:04.757 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=11.0.6
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-04-27 14:54:43.032
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-04-27 14:54:43.032
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@51617b93,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23471f48,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:05.257
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:05.258
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@3c81f484[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=1095)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:05.290
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:05.550
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-04-27 14:55:14.205
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\marcos_marossi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:22.426
+!MESSAGE Boot LS startup time from start to initialized: 16980ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:22.852
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.EncMtMnZisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.117
+!MESSAGE subscribing to classpath changes: sts4.classpath.EncMtMnZ isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.120
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.121
+!MESSAGE subsribers = {sts4.classpath.EncMtMnZ=Send Classpath Notifications(108)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.122
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.122
+!MESSAGE project Client ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.123
+!MESSAGE project Server ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.123
+!MESSAGE Preparing classpath changed notification Client
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.124
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.124
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.125
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.EncMtMnZ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.128
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.129
+!MESSAGE buffering callback sts4.classpath.EncMtMnZ Client false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.129
+!MESSAGE Preparing classpath changed notification Server
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.130
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.131
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.131
+!MESSAGE buffering callback sts4.classpath.EncMtMnZ Server false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.131
+!MESSAGE executing callback sts4.classpath.EncMtMnZ 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 14:55:24.173
+!MESSAGE executing callback sts4.classpath.EncMtMnZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:06:36.062
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.EncMtMnZ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:06:36.063
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.EncMtMnZ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:06:36.064
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:06:36.064
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.EncMtMnZ => OK
+!SESSION 2020-04-27 15:14:37.187 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=11.0.6
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-04-27 15:18:36.567
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-04-27 15:18:36.567
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@108b2321,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7f2c36de,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:18:55.531
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:18:55.531
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@6caffb24[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=1095)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:18:55.540
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:18:55.671
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:18:57.789
+!MESSAGE Boot LS startup time from start to initialized: 2223ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:18:57.825
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ZTAgdODyisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.944
+!MESSAGE subscribing to classpath changes: sts4.classpath.ZTAgdODy isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.947
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.950
+!MESSAGE subsribers = {sts4.classpath.ZTAgdODy=Send Classpath Notifications(70)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.951
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.953
+!MESSAGE project Client ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.954
+!MESSAGE project Server ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.956
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.959
+!MESSAGE Preparing classpath changed notification Client
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.960
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ZTAgdODy => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.961
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.970
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.971
+!MESSAGE buffering callback sts4.classpath.ZTAgdODy Client false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.972
+!MESSAGE Preparing classpath changed notification Server
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.974
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.980
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.981
+!MESSAGE buffering callback sts4.classpath.ZTAgdODy Server false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:00.981
+!MESSAGE executing callback sts4.classpath.ZTAgdODy 2 batched events
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-04-27 15:19:01.024
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\marcos_marossi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-27 15:19:01.199
+!MESSAGE executing callback sts4.classpath.ZTAgdODy SUCCESS [done]

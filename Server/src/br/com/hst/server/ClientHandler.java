@@ -14,7 +14,6 @@ public class ClientHandler implements Runnable {
 	private Map<String, ClientHandler> clientList;
 	private Socket client;
 	private String name;
-	private boolean validar = false;
 	private DataInputStream dis;
 	private DataOutputStream dos;
 
@@ -44,6 +43,7 @@ public class ClientHandler implements Runnable {
 					sendMessage(targetMessage);
 					break;
 				case MenuConstants.SEND_FILE:
+					listUser();
 					String target = dis.readUTF();
 					sendFile(target);
 					break;
@@ -69,7 +69,7 @@ public class ClientHandler implements Runnable {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		});		
+		});
 	}
 
 	private void sendFile(String target) {
@@ -111,22 +111,13 @@ public class ClientHandler implements Runnable {
 	protected void sendMessage(String targetMessage) {
 		try {
 			DataOutputStream targetClient = Server.getClientList().get(targetMessage).getDataOutputStream();
-			
-			String message = "";
-			
-			while (!message.equals("!exit")) {
-				message = dis.readUTF();
-				
-				SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-				String hora = dateFormat.format(new Date());
-				
-				if(!message.equals("!exit")) {
-					targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);				
-					targetClient.writeUTF("> " + name + " ["  + hora + "]: " + message);
-				} else {
-					
-				}
-			}
+			String message = dis.readUTF();
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+			String hora = dateFormat.format(new Date());
+
+			targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);
+			targetClient.writeUTF("\n\nVocê recebeu uma mensagem:\n" + name + " disse [" + hora + "]: " + message +"\n");
 
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem");
