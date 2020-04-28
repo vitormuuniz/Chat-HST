@@ -165,9 +165,7 @@ public class RequestHandler {
 		FileOutputStream fos = null;
 		try {
 			String filename = dis.readUTF();
-			System.out.println("\n\nArquivo recebido: " + filename);
 			int fileSize = dis.readInt();
-			System.out.println("Tamanho do arquivo: " + fileSize + " bytes\n");
 
 			Path path = Paths.get("out" + File.separator + filename);
 			if (!Files.exists(path.getParent())) {
@@ -190,6 +188,8 @@ public class RequestHandler {
 				fos.write(buffer);
 				remaining -= buffer.length;
 			}
+			System.out.println("\n\nArquivo recebido: " + filename);
+			System.out.println("Tamanho do arquivo: " + fileSize + " bytes\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Falha ao obter arquivo");
