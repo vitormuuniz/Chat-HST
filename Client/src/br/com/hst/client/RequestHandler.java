@@ -131,26 +131,19 @@ public class RequestHandler {
 
 			System.out.println("Digite o nome do Arquivo: ");
 			String filename = sc.next();
+			File archive = new File(filename);
+			fis = new FileInputStream(archive);
+			
 
-			fis = new FileInputStream(new File(filename));
-			int fileSize = fis.available();
+			dos.writeUTF(archive.getName());
+			dos.writeLong(archive.length());
 
-			dos.writeUTF(filename);
-			dos.writeInt(fileSize);
+			int lido = 0;
+			byte[] buffer = new byte[4092];
 
-			int bufferSize = fileSize < 4096 ? fileSize : 4096;
-			byte[] buffer = new byte[bufferSize];
-
-			int remaining = fileSize;
-			while (remaining > 0) {
-				fis.read(buffer);
-				if (remaining < bufferSize) {
-					byte[] bufferOld = buffer;
-					buffer = new byte[remaining];
-					System.arraycopy(bufferOld, 0, buffer, 0, buffer.length);
-				}
-				dos.write(buffer);
-				remaining -= buffer.length;
+			while ((lido = fis.read(buffer)) != -1) {
+				dos.write(buffer, 0, lido);
+				dos.flush();
 			}
 			System.out.println("\nArquivo " + filename + " enviado para " + target);
 		} catch (IOException e) {
@@ -165,7 +158,7 @@ public class RequestHandler {
 		FileOutputStream fos = null;
 		try {
 			String filename = dis.readUTF();
-			int fileSize = dis.readInt();
+			long fileSize = dis.readLong();
 
 			Path path = Paths.get("out" + File.separator + filename);
 			if (!Files.exists(path.getParent())) {
@@ -175,19 +168,14 @@ public class RequestHandler {
 
 			fos = new FileOutputStream(path.toFile());
 
-			int bufferSize = fileSize < 4096 ? fileSize : 4096;
-			byte[] buffer = new byte[bufferSize];
-			int remaining = fileSize;
-			while (remaining > 0) {
-				dis.read(buffer);
-				if (remaining < bufferSize) {
-					byte[] bufferOld = buffer;
-					buffer = new byte[remaining];
-					System.arraycopy(bufferOld, 0, buffer, 0, buffer.length);
-				}
-				fos.write(buffer);
-				remaining -= buffer.length;
+			long lido = 0;
+			byte[] buffer = new byte[4092];
+
+			while (fileSize > 0 && (lido = dis.read(buffer, 0, (int) Math.min(buffer.length, fileSize))) != -1) {
+				fos.write(buffer, 0, (int) lido);
+				fileSize -= lido;
 			}
+
 			System.out.println("\n\nArquivo recebido: " + filename);
 			System.out.println("Tamanho do arquivo: " + fileSize + " bytes\n");
 		} catch (IOException e) {
