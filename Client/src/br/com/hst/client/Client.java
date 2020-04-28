@@ -24,7 +24,7 @@ public class Client {
 			sc = new Scanner(System.in);
 			System.out.println("Digite a porta do servidor: ");
 			int port = sc.nextInt();
-			Socket client = new Socket(InetAddress.getLocalHost().getHostAddress(), port);
+			Socket client = new Socket("192.168.14.9", port);
 			RequestHandler requestHandler = new RequestHandler(client);
 			DataInputStream dis = new DataInputStream(client.getInputStream());
 			DataOutputStream dos = new DataOutputStream(client.getOutputStream());

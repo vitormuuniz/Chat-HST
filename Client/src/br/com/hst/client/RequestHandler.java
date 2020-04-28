@@ -230,8 +230,9 @@ public class RequestHandler {
 
 	private String userTarget(String name, Scanner sc) {
 		System.out.println("\nInforme o Destinatário: ");
-		while (true) {
-			String target = sc.next();
+		String target = "           ";
+		while (!listUsers.contains(target) || target.equals(name)) {
+			target = sc.next();
 
 			if (!listUsers.contains(target)) {
 				System.err.println("Destinatário inválido, digite novamente:");
@@ -241,8 +242,7 @@ public class RequestHandler {
 				System.err.println("Você digitou o próprio nome, digite um destinatário válido:");
 				continue;
 			}
-
-			return target;
 		}
+		return target;
 	}
 }
