@@ -100,7 +100,7 @@ public class RequestHandler {
 	private void sendMessage(DataOutputStream dos, String name) {
 		try {
 			Scanner sc = new Scanner(System.in);
-			Thread.sleep(100);
+			Thread.sleep(1000);
 			String target = userTarget(name, sc);
 			dos.writeUTF(target);
 
@@ -124,7 +124,7 @@ public class RequestHandler {
 		FileInputStream fis = null;
 		try {
 			sc = new Scanner(System.in);
-			Thread.sleep(100);
+			Thread.sleep(1000);
 
 			String target = userTarget(name, sc);
 			dos.writeUTF(target);
