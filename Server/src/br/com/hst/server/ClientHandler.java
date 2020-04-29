@@ -48,7 +48,7 @@ public class ClientHandler implements Runnable {
 					sendFile(target);
 					break;
 				case MenuConstants.EXIT:
-					System.out.println("O cliente " + this.name + " fechou a conexão.");
+					System.out.println("O cliente " + this.name + " fechou a conexao.");
 					client.close();
 					clientList.remove(this.name);
 					break;
@@ -113,7 +113,7 @@ public class ClientHandler implements Runnable {
 			String hora = dateFormat.format(new Date());
 
 			targetClient.writeUTF(MenuConstants.RECEIVE_MESSAGE);
-			targetClient.writeUTF("\n\nVocê recebeu uma mensagem:\n" + name + " disse [" + hora + "]: " + message +"\n");
+			targetClient.writeUTF("\n\nVoce recebeu uma mensagem:\n" + name + " disse [" + hora + "]: " + message +"\n");
 
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem");

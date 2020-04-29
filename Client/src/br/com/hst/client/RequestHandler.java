@@ -56,11 +56,11 @@ public class RequestHandler {
 			}
 
 			private void showMenu() {
-				System.out.println("\n==============================\n1 - Visualizar usuários online\r\n" + 
+				System.out.println("\n==============================\n1 - Visualizar usuarios online\r\n" + 
 							"2 - Enviar mensagem\r\n" +
-							"3 - Enviar arquivos\r\n" + 
+							"3 - Enviar arquivo\r\n" + 
 							"4 - Sair\n");
-				System.out.println("> Escolha uma operação: ");
+				System.out.println("> Escolha uma operacao: ");
 			}
 		});
 		t.start();
@@ -101,7 +101,7 @@ public class RequestHandler {
 		try {
 			Scanner sc = new Scanner(System.in);
 			Thread.sleep(1000);
-			String target = userTarget(name, sc);
+			String target = targetUser(name, sc);
 			dos.writeUTF(target);
 
 			String message = sc.nextLine();
@@ -115,7 +115,7 @@ public class RequestHandler {
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem.");
 		} catch (InterruptedException e) {
-			System.out.println("Falha ao listar usuários.");
+			System.out.println("Falha ao listar usuarios.");
 		}
 		listUsers.clear();
 	}
@@ -126,10 +126,10 @@ public class RequestHandler {
 			sc = new Scanner(System.in);
 			Thread.sleep(1000);
 
-			String target = userTarget(name, sc);
+			String target = targetUser(name, sc);
 			dos.writeUTF(target);
 
-			System.out.println("Digite o nome do Arquivo: ");
+			System.out.println("Digite o nome do arquivo: ");
 			String filename = sc.next();
 			File archive = new File(filename);
 			fis = new FileInputStream(archive);
@@ -148,7 +148,7 @@ public class RequestHandler {
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar arquivo.");
 		} catch (InterruptedException e) {
-			System.out.println("Falha ao listar usuários.");
+			System.out.println("Falha ao listar usuarios.");
 		}
 		listUsers.clear();
 	}
@@ -176,7 +176,6 @@ public class RequestHandler {
 			}
 
 			System.out.println("\n\nArquivo recebido: " + filename);
-			System.out.println("Tamanho do arquivo: " + fileSize + " bytes\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Falha ao obter arquivo");
@@ -191,7 +190,7 @@ public class RequestHandler {
 	}
 
 	protected void closeConnection() throws IOException {
-		System.out.println("Encerrando conexão...");
+		System.out.println("Encerrando conexao...");
 		client.close();
 		System.exit(0);
 	}
@@ -207,7 +206,7 @@ public class RequestHandler {
 
 	protected void receiveUsersList(DataInputStream dis) throws IOException {
 		int num = dis.readInt();
-		System.out.println("\nNúmero de usuários online: " + num);
+		System.out.println("\nNumero de usuarios online: " + num);
 		for (int i = 0; i < num; i++) {
 			String user = dis.readUTF();
 			listUsers.add(user);
@@ -215,18 +214,18 @@ public class RequestHandler {
 		}
 	}
 
-	private String userTarget(String name, Scanner sc) {
-		System.out.println("\nInforme o Destinatário: ");
+	private String targetUser(String name, Scanner sc) {
+		System.out.println("\nInforme o Destinatario: ");
 		String target = "           ";
 		while (!listUsers.contains(target) || target.equals(name)) {
 			target = sc.next();
 
 			if (!listUsers.contains(target)) {
-				System.err.println("Destinatário inválido, digite novamente:");
+				System.err.println("Destinatario invalido, digite novamente:");
 				continue;
 			}
 			if (target.equals(name)) {
-				System.err.println("Você digitou o próprio nome, digite um destinatário válido:");
+				System.err.println("Voce digitou o proprio nome, digite um destinatario valido:");
 				continue;
 			}
 		}
