@@ -56,11 +56,11 @@ public class RequestHandler {
 			}
 
 			private void showMenu() {
-				System.out.println("\n==============================\n1 - Visualizar usu·rios online\r\n" + 
+				System.out.println("\n==============================\n1 - Visualizar usu√°rios online\r\n" + 
 							"2 - Enviar mensagem\r\n" +
 							"3 - Enviar arquivos\r\n" + 
 							"4 - Sair\n");
-				System.out.println("> Escolha uma operaÁ„o: ");
+				System.out.println("> Escolha uma opera√ß√£o: ");
 			}
 		});
 		t.start();
@@ -115,7 +115,7 @@ public class RequestHandler {
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar mensagem.");
 		} catch (InterruptedException e) {
-			System.out.println("Falha ao listar usu·rios.");
+			System.out.println("Falha ao listar usu√°rios.");
 		}
 		listUsers.clear();
 	}
@@ -134,7 +134,6 @@ public class RequestHandler {
 			File archive = new File(filename);
 			fis = new FileInputStream(archive);
 			
-
 			dos.writeUTF(archive.getName());
 			dos.writeLong(archive.length());
 
@@ -149,7 +148,7 @@ public class RequestHandler {
 		} catch (IOException e) {
 			System.out.println("Falha ao enviar arquivo.");
 		} catch (InterruptedException e) {
-			System.out.println("Falha ao listar usu·rios.");
+			System.out.println("Falha ao listar usu√°rios.");
 		}
 		listUsers.clear();
 	}
@@ -192,7 +191,7 @@ public class RequestHandler {
 	}
 
 	protected void closeConnection() throws IOException {
-		System.out.println("Encerrando conex„o...");
+		System.out.println("Encerrando conex√£o...");
 		client.close();
 		System.exit(0);
 	}
@@ -208,7 +207,7 @@ public class RequestHandler {
 
 	protected void receiveUsersList(DataInputStream dis) throws IOException {
 		int num = dis.readInt();
-		System.out.println("\nN˙mero de usu·rios online: " + num);
+		System.out.println("\nN√∫mero de usu√°rios online: " + num);
 		for (int i = 0; i < num; i++) {
 			String user = dis.readUTF();
 			listUsers.add(user);
@@ -217,17 +216,17 @@ public class RequestHandler {
 	}
 
 	private String userTarget(String name, Scanner sc) {
-		System.out.println("\nInforme o Destinat·rio: ");
+		System.out.println("\nInforme o Destinat√°rio: ");
 		String target = "           ";
 		while (!listUsers.contains(target) || target.equals(name)) {
 			target = sc.next();
 
 			if (!listUsers.contains(target)) {
-				System.err.println("Destinat·rio inv·lido, digite novamente:");
+				System.err.println("Destinat√°rio inv√°lido, digite novamente:");
 				continue;
 			}
 			if (target.equals(name)) {
-				System.err.println("VocÍ digitou o prÛprio nome, digite um destinat·rio v·lido:");
+				System.err.println("Voc√™ digitou o pr√≥prio nome, digite um destinat√°rio v√°lido:");
 				continue;
 			}
 		}
