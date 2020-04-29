@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;users&apos; in &apos;br.com.hst.client.RequestHandler.receiveUsersList(...)&apos; to &apos;user&apos;&#x0D;&#x0A;- Original project: &apos;Client&apos;&#x0D;&#x0A;- Original element: &apos;br.com.hst.client.RequestHandler.receiveUsersList(DataInputStream).users&apos;&#x0D;&#x0A;- Renamed element: &apos;users&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;users&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;br.com.hst.client{RequestHandler.java[RequestHandler~receiveUsersList~QDataInputStream;@users!6197!6225!6204!6208!QString;!0!false" name="user" references="true" stamp="1588007019208" version="1.0"/>
-</session>

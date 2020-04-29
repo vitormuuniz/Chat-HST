@@ -1,7 +1,0 @@
-package br.com.hst.server;
-
-public enum MenuConstants {
-
-	LIST_USERS SEND_MESSAGE, SEND_FILE, CLOSE;
-
-}
