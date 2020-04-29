@@ -79,23 +79,18 @@ public class ClientHandler implements Runnable {
 
 			String filename = dis.readUTF();
 			filename = filename.substring(filename.lastIndexOf("\\") + 1);
-			int fileSize = dis.readInt();
-			int bufferSize = fileSize < 4096 ? fileSize : 4096;
+			long fileSize = dis.readLong();
+			long bufferSize = fileSize < 4096 ? fileSize : 4096;
 
 			targetClient.writeUTF("received_" + System.currentTimeMillis() + "_" + filename);
-			targetClient.writeInt(fileSize);
+			targetClient.writeLong(fileSize);
 
-			byte[] buffer = new byte[bufferSize];
-			int remaining = fileSize;
-			while (remaining > 0) {
-				dis.read(buffer);
-				if (remaining < bufferSize) {
-					byte[] bufferOld = buffer;
-					buffer = new byte[remaining];
-					System.arraycopy(bufferOld, 0, buffer, 0, buffer.length);
-				}
-				targetClient.write(buffer);
-				remaining -= buffer.length;
+			long lido = 0;
+			byte[] buffer = new byte[(int) bufferSize];
+
+			while (fileSize > 0 && (lido = dis.read(buffer, 0, (int) Math.min(buffer.length, fileSize))) != -1) {
+				targetClient.write(buffer, 0, (int) lido);
+				fileSize -= lido;
 			}
 			System.out.println("\nArquivo " + filename + " recebido e redirecionado para " + target);
 
