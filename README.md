@@ -4,7 +4,7 @@
     
 ## Cliente
 
-    Ao ser inicializado mostra o seguinte menu:
+    Ao inicializar é mostrado o seguinte menu:
     
     1 - Visualizar usuários online
     2 - Enviar mensagem
