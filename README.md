@@ -1,6 +1,6 @@
 # Treinamento Chat
 
-    Aplicação console que permite conversa entre vários clientes
+    Aplicação que permite comunicação entre vários clientes conectados à um mesmo servidor
     
 ## Cliente
 
@@ -11,10 +11,10 @@
     3 - Enviar arquivo
     4 - Sair
    
-    Opção 1 -> Mostra a lista de usuarios online,   
-    Opção 2 -> Escolha do usuario e em seguida permite a entrada da mensagem a ser enviada,   
-    Opção 3 -> Entrada do caminho de um arquivo a ser enviado,   
-    Opção 4 -> Sai do programa.  
+    Opção 1 -> Mostra a lista de usuarios online; 
+    Opção 2 -> Escolhe-se um usuario disponível e permite o envio de mensagem ao destinatário;  
+    Opção 3 -> Escolhe-se um usuario disponível e permite o envio de arquivo ao destinatário; 
+    Opção 4 -> Finaliza execução;
    
 ## Servidor
 
