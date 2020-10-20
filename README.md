@@ -24,4 +24,4 @@
     
 ## Arquitetura
 
-![](https://www.caelum.com.br/apostila-java-orientacao-objetos/images/apendicesockets/cliente-servidor.png)
+![](hhttps://www.caelum.com.br/apostila-java-orientacao-objetos/assets/images/apendicesockets/cliente-servidor.png)
